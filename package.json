@@ -4,6 +4,10 @@
     "description": "Security-first VS Code extension for scanning staged changes.",
     "version": "0.0.1",
     "publisher": "shawnchee",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Shawnchee/VibeGuard-Extension"
+    },
     "engines": {
         "vscode": "^1.75.0"
     },
@@ -40,8 +44,10 @@
             "properties": {
                 "vibeguard.model": {
                     "type": "string",
-                    "default": "gemini-2.5-flash",
+                    "default": "gemini-1.5-flash",
                     "enum": [
+                        "gemini-1.5-flash",
+                        "gemini-1.5-pro",
                         "gemini-2.5-flash",
                         "gemini-2.5-pro",
                         "gemini-3-pro",
