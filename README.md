@@ -1,5 +1,9 @@
 # 🛡️ VibeGuard
 
+<p align="center">
+  <img src="icon.png" alt="VibeGuard Logo" width="128" height="128" />
+</p>
+
 **VibeGuard** is a security-first VS Code extension designed for developers who move fast but want to stay safe. It acts as your "Anti-Gravity Cursor" and Pre-Commit Shield, scanning staged changes via the Gemini API to detect leaked secrets and code vulnerabilities before you push.
 
 ## 🚀 Features
