@@ -4,6 +4,16 @@ All notable changes to the "vibeguard-extension" extension will be documented in
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.3] - 2026-02-18
+
+### Added
+-   **Model Switching Button**: Added a gear icon (⚙️) in the Source Control title bar to quickly swap between Gemini models without opening settings.
+-   **Direct Model Picker**: New command `VibeGuard: Change VibeGuard Model` implemented.
+
+### Changed
+-   **Deprecated Models Removed**: Professionally removed Gemini 1.5 versions to favor the superior Gemini 2.5 and 3.0 series.
+-   **New Default Model**: Updated default model to `gemini-2.5-flash`.
+
 ## [0.0.2] - 2026-02-18
 
 ### Added
@@ -26,7 +36,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 -   Basic vulnerability auditing (SQLi, XSS, etc.).
 -   Auto-generated `VIBE_CHECK.md` security report.
 -   Support for multiple Gemini models:
-    -   `gemini-1.5-flash` (Default)
+    -   `gemini-2.5-flash` (Default)
     -   `gemini-1.5-pro`
     -   `gemini-2.5-flash`
     -   `gemini-2.5-pro`

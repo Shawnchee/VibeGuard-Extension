@@ -41,9 +41,7 @@
 
 You can customize the Gemini model used for scanning in your VS Code settings:
 
--   `vibeguard.model`: Select the model (Default: `gemini-1.5-flash`). Supported models:
-    -   `gemini-1.5-flash`
-    -   `gemini-1.5-pro`
+-   `vibeguard.model`: Select the model (Default: `gemini-2.5-flash`). Supported models:
     -   `gemini-2.5-flash`
     -   `gemini-2.5-pro`
     -   `gemini-3-pro`
