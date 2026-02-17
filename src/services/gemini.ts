@@ -34,7 +34,9 @@ export class GeminiService {
 
         ### 🚨 Security Alerts
         - [High/Medium/Low] <Description of vulnerability or secret>
-        (If safe, say "✅ No significant security issues found.")
+        
+        **IF NO VULNERABILITIES ARE FOUND:**
+        Return exactly: "✅ No significant security issues found. Safe to commit." under this checks section.
 
         ### 📝 Change Summary
         <Brief summary of what the code does>
