@@ -49,7 +49,7 @@ export class GeminiService {
                 model: modelName,
                 contents: prompt,
             });
-            return result.text();
+            return result.text;
 
         } catch (error: any) {
             throw new Error(`Vibe Check failed: ${error.message}`);
