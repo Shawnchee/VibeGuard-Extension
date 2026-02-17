@@ -41,6 +41,14 @@ export class GeminiService {
         ### 📝 Change Summary
         <Brief summary of what the code does>
 
+        ### 📋 TLDR: Can I Commit?
+        **[Safe to Commit]**
+        - <File A>
+        - <File B>
+
+        **[CANNOT COMMIT - RISKS DETECTED]**
+        - <File C> (Reason: <Brief reason>)
+
         ---
         GIT DIFF:
         ${diff}
