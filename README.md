@@ -33,7 +33,8 @@
 
 1.  **Stage your changes** (`git add .`).
 2.  Click the **Vibe Check** button in the Source Control title bar (🛡️ icon) OR run the command `Vibe Guard: Vibe Check (Scan Staged Changes)`.
-3.  VibeGuard will analyze your changes and open a **`VIBE_CHECK.md`** report.
+3.  **Switch Models Quickly**: Click the **Gear icon (⚙️)** in the Source Control title bar to instantly swap Gemini models.
+4.  VibeGuard will analyze your changes and open a **`VIBE_CHECK.md`** report.
     -   **✅ Green**: No significant issues found. You're safe to commit!
     -   **🚨 Red**: Potential vulnerabilities detected. Review the report before pushing.
 
@@ -43,11 +44,11 @@ You can customize the Gemini model used for scanning in your VS Code settings:
 
 -   `vibeguard.model`: Select the model (Default: `gemini-2.5-flash`). Supported models:
     -   `gemini-2.5-flash`
+    -   `gemini-2.5-flash-lite`
     -   `gemini-2.5-pro`
-    -   `gemini-3-pro`
-    -   `gemini-2-flash-lite`
-    -   `gemini-2-flash`
-    -   `gemini-3-flash`
+    -   `gemini-3-flash-preview`
+    -   `gemini-2.5-flash-preview-09-2025`
+    -   `gemini-2.5-flash-lite-preview-09-2025`
 
 ## 🤝 Contributing
 
