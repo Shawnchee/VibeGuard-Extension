@@ -89,11 +89,11 @@ export function activate(context: vscode.ExtensionContext) {
         // Pick models from package.json enum
         const models = [
             "gemini-2.5-flash",
+            "gemini-2.5-flash-lite",
             "gemini-2.5-pro",
-            "gemini-3-pro",
-            "gemini-2-flash-lite",
-            "gemini-2-flash",
-            "gemini-3-flash"
+            "gemini-3-flash-preview",
+            "gemini-2.5-flash-preview-09-2025",
+            "gemini-2.5-flash-lite-preview-09-2025"
         ];
 
         const selected = await vscode.window.showQuickPick(
