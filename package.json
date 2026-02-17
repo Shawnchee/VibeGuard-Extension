@@ -2,7 +2,7 @@
     "name": "vibeguard-extension",
     "displayName": "VibeGuard",
     "description": "Security-first VS Code extension for scanning staged changes to prevent pushing sensitive data accidentally to GitHub",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "shawnchee",
     "icon": "icon.png",
     "repository": {
@@ -29,13 +29,23 @@
             {
                 "command": "vibeguard.setApiKey",
                 "title": "Set Gemini API Key"
+            },
+            {
+                "command": "vibeguard.changeModel",
+                "title": "Change VibeGuard Model",
+                "icon": "$(gear)"
             }
         ],
         "menus": {
             "scm/title": [
                 {
                     "command": "vibeguard.scan",
-                    "group": "navigation",
+                    "group": "navigation@1",
+                    "when": "scmProvider == git"
+                },
+                {
+                    "command": "vibeguard.changeModel",
+                    "group": "navigation@2",
                     "when": "scmProvider == git"
                 }
             ]
@@ -45,10 +55,8 @@
             "properties": {
                 "vibeguard.model": {
                     "type": "string",
-                    "default": "gemini-1.5-flash",
+                    "default": "gemini-2.5-flash",
                     "enum": [
-                        "gemini-1.5-flash",
-                        "gemini-1.5-pro",
                         "gemini-2.5-flash",
                         "gemini-2.5-pro",
                         "gemini-3-pro",

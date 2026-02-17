@@ -81,7 +81,36 @@ export function activate(context: vscode.ExtensionContext) {
         });
     });
 
-    context.subscriptions.push(setApiKeyCommand, scanCommand, outputChannel);
+    // Command: Change Model
+    const changeModelCommand = vscode.commands.registerCommand('vibeguard.changeModel', async () => {
+        const config = vscode.workspace.getConfiguration('vibeguard');
+        const currentModel = config.get<string>('model', 'gemini-2.5-flash');
+
+        // Pick models from package.json enum
+        const models = [
+            "gemini-2.5-flash",
+            "gemini-2.5-pro",
+            "gemini-3-pro",
+            "gemini-2-flash-lite",
+            "gemini-2-flash",
+            "gemini-3-flash"
+        ];
+
+        const selected = await vscode.window.showQuickPick(
+            models.map(m => ({
+                label: m,
+                description: m === currentModel ? '(Current)' : ''
+            })),
+            { placeHolder: 'Select Gemini Model for VibeGuard' }
+        );
+
+        if (selected) {
+            await config.update('model', selected.label, vscode.ConfigurationTarget.Global);
+            vscode.window.showInformationMessage(`VibeGuard model updated to ${selected.label}`);
+        }
+    });
+
+    context.subscriptions.push(setApiKeyCommand, scanCommand, changeModelCommand, outputChannel);
 }
 
 export function deactivate() { }
