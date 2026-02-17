@@ -4,6 +4,19 @@ All notable changes to the "vibeguard-extension" extension will be documented in
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.2] - 2026-02-18
+
+### Added
+-   **Official Extension Icon**: Added a sleek neon security shield logo.
+-   **Enhanced Documentation**: Added `CONTRIBUTING.md` and `LICENSE.md`.
+-   **Updated README**: Improved instructions and added the new branding.
+-   **Expanded Model Support**: Added more Gemini model options (1.5, 2.5, 3.0 variants) in settings.
+
+### Fixed
+-   **Bug Fix**: Fixed "result.text is not a function" error in Gemini service.
+-   **Prompt Tuning**: Improved the AI prompt for cleaner Markdown reports and more consistent "no vulnerabilities" messaging.
+-   **Build Stability**: Fixed `tsconfig.json` syntax errors and improved `exclude` patterns for faster, error-free compilation.
+
 ## [0.0.1] - 2026-02-17
 
 ### Added
