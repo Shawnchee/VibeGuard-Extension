@@ -2,7 +2,7 @@
     "name": "vibeguard-extension",
     "displayName": "VibeGuard",
     "description": "Security-first VS Code extension for scanning staged changes to prevent pushing sensitive data accidentally to GitHub",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "shawnchee",
     "icon": "icon.png",
     "repository": {
