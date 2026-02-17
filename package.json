@@ -1,0 +1,71 @@
+{
+    "name": "vibeguard-extension",
+    "displayName": "VibeGuard",
+    "description": "Security-first VS Code extension for scanning staged changes.",
+    "version": "0.0.1",
+    "publisher": "shawnchee",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Security",
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "vibeguard.scan",
+                "title": "Vibe Check (Scan Staged Changes)",
+                "icon": "$(shield)"
+            },
+            {
+                "command": "vibeguard.setApiKey",
+                "title": "Set Gemini API Key"
+            }
+        ],
+        "menus": {
+            "scm/title": [
+                {
+                    "command": "vibeguard.scan",
+                    "group": "navigation",
+                    "when": "scmProvider == git"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "VibeGuard",
+            "properties": {
+                "vibeguard.model": {
+                    "type": "string",
+                    "default": "gemini-1.5-flash",
+                    "enum": [
+                        "gemini-1.5-flash",
+                        "gemini-1.5-pro"
+                    ],
+                    "description": "Select the Gemini model to use for scanning."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.75.0",
+        "@types/node": "^16.11.7",
+        "typescript": "^4.9.5",
+        "eslint": "^8.33.0"
+    },
+    "dependencies": {
+        "@google/genai": "^1.30.0"
+    }
+}
