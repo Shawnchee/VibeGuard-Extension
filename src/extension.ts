@@ -48,15 +48,29 @@ export function activate(context: vscode.ExtensionContext) {
 
                 const report = await geminiService.scanChanges(diff);
 
+                // Write report to markdown file
+                const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
+                if (!workspaceFolder) {
+                    throw new Error('No workspace folder open');
+                }
+
+                const reportUri = vscode.Uri.joinPath(workspaceFolder.uri, 'VIBE_CHECK.md');
+                await vscode.workspace.fs.writeFile(reportUri, Buffer.from(report, 'utf-8'));
+
+                // Open the report
+                const document = await vscode.workspace.openTextDocument(reportUri);
+                await vscode.window.showTextDocument(document, { preview: false });
+
+                // Also show output channel for quick reference
                 outputChannel.clear();
                 outputChannel.appendLine(report);
-                outputChannel.show();
+                // outputChannel.show(); // Don't show output channel if we're showing the file
 
                 // Basic heuristic for success/failure notification
-                if (report.includes("🚨") || report.includes("High Risk")) {
-                    vscode.window.showWarningMessage("VibeGuard found potential security issues! Check the Output panel.");
+                if (report.includes("✅")) {
+                    vscode.window.showInformationMessage("✅ Vibe Check Passed: No significant security issues found.");
                 } else {
-                    vscode.window.showInformationMessage("✅ Vibe Check Passed: No obvious threats found.");
+                    vscode.window.showWarningMessage("VibeGuard found potential security issues! Check the VIBE_CHECK.md report.");
                 }
 
             } catch (error: any) {
