@@ -16,7 +16,7 @@
 
 ## 📦 Installation
 
-1.  Install via the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=shawnchee.vibeguard-extension) or [Open VSX](https://open-vsx.org/extension/shawnchee/vibeguard-extension).
+1.  Install via the [Open VSX](https://open-vsx.org/extension/shawnchee/vibeguard-extension).
 2.  Or download the `.vsix` from the releases page and install manually.
 
 ## ⚙️ Setup
